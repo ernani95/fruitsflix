@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suporte — FruitFlix IA</title>
+  <meta name="description" content="Suporte FruitFlix IA. Entre em contato via WhatsApp ou consulte as perguntas frequentes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #E50914; --red-glow: rgba(229,9,20,0.35);
+      --gold: #FFD700;
+      --green: #25D366; --green-dark: #1da851; --green-glow: rgba(37,211,102,0.35);
+      --bg: #0a0a0d; --bg2: #111118; --bg3: #16161f;
+      --card: #1a1a26;
+      --text: #f0f0f5; --muted: #8888a0;
+      --border: rgba(255,255,255,0.07);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; }
+
+    /* TOPBAR */
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 40px;
+      background: rgba(10,10,13,0.97); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-family: 'Oswald', sans-serif; font-size: 1.7rem; font-weight: 700;
+      color: var(--red); letter-spacing: -0.5px; text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+      text-shadow: 0 0 20px var(--red-glow);
+    }
+    .logo span { color: var(--text); }
+    .logo .badge {
+      background: var(--gold); color: #000;
+      font-family: 'Inter', sans-serif; font-size: 0.5rem; font-weight: 800;
+      padding: 2px 5px; border-radius: 4px; letter-spacing: 1px;
+      align-self: flex-start; margin-top: 4px;
+    }
+    .back-btn {
+      background: var(--card); border: 1px solid var(--border);
+      color: var(--muted); font-size: 0.83rem; font-weight: 600;
+      padding: 9px 18px; border-radius: 8px; text-decoration: none;
+      transition: all 0.2s; display: flex; align-items: center; gap: 6px;
+    }
+    .back-btn:hover { border-color: rgba(229,9,20,0.4); color: var(--text); }
+
+    /* HERO */
+    .page-hero {
+      padding: 60px 24px 50px;
+      background: linear-gradient(180deg, rgba(37,211,102,0.06) 0%, transparent 100%);
+      border-bottom: 1px solid var(--border); text-align: center;
+    }
+    .page-tag {
+      display: inline-block;
+      background: rgba(37,211,102,0.1); border: 1px solid rgba(37,211,102,0.25);
+      color: var(--green); font-size: 0.72rem; font-weight: 700;
+      padding: 4px 14px; border-radius: 100px;
+      letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px;
+    }
+    .page-title {
+      font-family: 'Oswald', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700; margin-bottom: 12px;
+    }
+    .page-sub { font-size: 1rem; color: var(--muted); max-width: 500px; margin: 0 auto; }
+
+    /* MAIN */
+    .content-wrapper { max-width: 860px; margin: 0 auto; padding: 60px 24px 80px; }
+
+    /* STATUS */
+    .status-bar {
+      background: rgba(37,211,102,0.07);
+      border: 1px solid rgba(37,211,102,0.2);
+      border-radius: 12px; padding: 16px 24px;
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 48px;
+    }
+    .status-dot {
+      width: 10px; height: 10px; border-radius: 50%; background: var(--green);
+      flex-shrink: 0; box-shadow: 0 0 12px var(--green-glow);
+      animation: statusPulse 2s ease infinite;
+    }
+    @keyframes statusPulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+    .status-text { font-size: 0.88rem; }
+    .status-text strong { color: var(--green); }
+
+    /* CONTACT CARDS */
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 20px; margin-bottom: 56px;
+    }
+
+    /* WHATSAPP CARD */
+    .wpp-card {
+      background: linear-gradient(135deg, #0d1f15, #0f2a1a);
+      border: 1px solid rgba(37,211,102,0.3);
+      border-radius: 16px; padding: 36px 28px;
+      text-align: center;
+      box-shadow: 0 0 40px rgba(37,211,102,0.08);
+      transition: all 0.3s; position: relative; overflow: hidden;
+    }
+    .wpp-card::before {
+      content: ''; position: absolute; top: -50px; right: -50px;
+      width: 180px; height: 180px;
+      background: radial-gradient(circle, rgba(37,211,102,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .wpp-card:hover { transform: translateY(-4px); box-shadow: 0 12px 50px rgba(37,211,102,0.15); }
+    .wpp-icon { font-size: 3.5rem; margin-bottom: 16px; display: block; }
+    .wpp-card h3 {
+      font-family: 'Oswald', sans-serif; font-size: 1.4rem; font-weight: 700;
+      margin-bottom: 8px; color: var(--green);
+    }
+    .wpp-card .phone {
+      font-size: 1.1rem; font-weight: 700; color: var(--text);
+      margin-bottom: 6px; letter-spacing: 0.5px;
+    }
+    .wpp-card .hint { font-size: 0.8rem; color: var(--muted); margin-bottom: 24px; }
+    .btn-wpp {
+      display: inline-block; width: 100%;
+      background: var(--green);
+      color: #000; font-weight: 800; font-size: 0.95rem;
+      padding: 16px 24px; border-radius: 10px;
+      text-decoration: none; transition: all 0.25s;
+      letter-spacing: 0.3px;
+      box-shadow: 0 6px 24px var(--green-glow);
+    }
+    .btn-wpp:hover { background: var(--green-dark); transform: scale(1.03); }
+
+    /* INFO CARD */
+    .info-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 36px 28px;
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .info-card h3 {
+      font-family: 'Oswald', sans-serif; font-size: 1.2rem; font-weight: 700;
+      padding-bottom: 16px; border-bottom: 1px solid var(--border);
+    }
+    .info-item { display: flex; align-items: flex-start; gap: 14px; }
+    .info-item-icon {
+      width: 42px; height: 42px; border-radius: 10px;
+      background: var(--bg3); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
+    }
+    .info-item-text h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 2px; }
+    .info-item-text p { font-size: 0.82rem; color: var(--muted); }
+    .info-item-text a { color: var(--green); text-decoration: none; font-weight: 600; transition: color 0.2s; }
+    .info-item-text a:hover { color: #81e0a5; }
+
+    /* DIRECT BUTTON */
+    .direct-wpp-section {
+      text-align: center; margin-bottom: 56px;
+    }
+    .btn-wpp-large {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: var(--green);
+      color: #000; font-weight: 800; font-size: 1.05rem;
+      padding: 18px 40px; border-radius: 12px;
+      text-decoration: none; transition: all 0.25s;
+      box-shadow: 0 8px 32px var(--green-glow);
+      animation: greenPulse 2.5s ease infinite;
+    }
+    @keyframes greenPulse {
+      0%,100%{box-shadow:0 8px 32px var(--green-glow)}
+      50%{box-shadow:0 8px 50px rgba(37,211,102,0.5)}
+    }
+    .btn-wpp-large:hover { background: var(--green-dark); transform: translateY(-3px) scale(1.03); }
+    .btn-wpp-large .wpp-logo { font-size: 1.5rem; }
+
+    /* FAQ */
+    .faq-section h2 {
+      font-family: 'Oswald', sans-serif; font-size: 1.6rem; font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .faq-sub { font-size: 0.9rem; color: var(--muted); margin-bottom: 32px; }
+    .faq-list { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden; transition: border-color 0.3s;
+    }
+    .faq-item:hover { border-color: rgba(229,9,20,0.25); }
+    .faq-q {
+      width: 100%; padding: 18px 22px;
+      background: none; border: none;
+      color: var(--text); font-family: 'Inter', sans-serif;
+      font-size: 0.95rem; font-weight: 600;
+      text-align: left; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 16px; transition: color 0.2s;
+    }
+    .faq-q:hover { color: #ff6b75; }
+    .faq-arrow {
+      width: 28px; height: 28px; border-radius: 6px;
+      background: var(--bg3); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; flex-shrink: 0;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); background: rgba(229,9,20,0.15); border-color: rgba(229,9,20,0.3); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s;
+      padding: 0 22px;
+    }
+    .faq-a.open { max-height: 300px; padding: 0 22px 20px; }
+    .faq-a p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+    .faq-a a { color: var(--green); text-decoration: none; font-weight: 600; }
+
+    /* DIVIDER */
+    .divider {
+      height: 1px; background: linear-gradient(to right, transparent, var(--border), transparent);
+      margin: 48px 0;
+    }
+
+    footer {
+      padding: 30px 24px; text-align: center;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem; color: var(--muted);
+    }
+    footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--text); }
+    .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 10px; }
+
+    @media (max-width: 700px) {
+      .topbar { padding: 14px 16px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .page-hero { padding: 40px 16px 36px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <a href="index.html" class="logo">🍓 Fruit<span>Flix</span><span class="badge">IA</span></a>
+    <a href="index.html" class="back-btn" id="back-home-btn">← Voltar ao início</a>
+  </header>
+
+  <div class="page-hero">
+    <div class="page-tag">💬 ATENDIMENTO</div>
+    <h1 class="page-title">Central de Suporte</h1>
+    <p class="page-sub">Estamos aqui para ajudar! Fale com um dos nossos atendentes via WhatsApp ou consulte as perguntas frequentes abaixo.</p>
+  </div>
+
+  <div class="content-wrapper">
+
+    <!-- STATUS -->
+    <div class="status-bar">
+      <div class="status-dot"></div>
+      <div class="status-text">
+        <strong>Suporte Online</strong> — Nosso time está disponível de Segunda a Sábado, das 9h às 21h (horário de Brasília).
+        Tempo médio de resposta: <strong>menos de 30 minutos.</strong>
+      </div>
+    </div>
+
+    <!-- CONTACT CARDS -->
+    <div class="contact-grid">
+
+      <div class="wpp-card" id="whatsapp-card">
+        <span class="wpp-icon">💬</span>
+        <h3>WhatsApp</h3>
+        <div class="phone">+55 (11) 96185-0780</div>
+        <div class="hint">Clique para abrir o chat direto</div>
+        <a href="https://wa.me/5511961850780?text=Olá!%20Preciso%20de%20ajuda%20com%20o%20FruitFlix%20IA." target="_blank" class="btn-wpp" id="wpp-main-btn">
+          📲 FALAR NO WHATSAPP
+        </a>
+      </div>
+
+      <div class="info-card">
+        <h3>📋 Informações de Atendimento</h3>
+
+        <div class="info-item">
+          <div class="info-item-icon">⏰</div>
+          <div class="info-item-text">
+            <h4>Horário de Atendimento</h4>
+            <p>Segunda a Sábado: 9h às 21h<br />Domingos: 10h às 18h</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-item-icon">⚡</div>
+          <div class="info-item-text">
+            <h4>Tempo de Resposta</h4>
+            <p>Média de <strong style="color:var(--green)">30 minutos</strong> em dias úteis</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-item-icon">📱</div>
+          <div class="info-item-text">
+            <h4>Número de Contato</h4>
+            <p><a href="https://wa.me/5511961850780" target="_blank">+55 (11) 96185-0780</a></p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-item-icon">🔐</div>
+          <div class="info-item-text">
+            <h4>Acesso e Pagamentos</h4>
+            <p>Problemas com acesso ou cobrança? Nossa equipe resolve na hora.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- LARGE CTA -->
+    <div class="direct-wpp-section">
+      <p style="font-size:0.85rem;color:var(--muted);margin-bottom:16px;">Precisa de ajuda rápida? Fale agora mesmo:</p>
+      <a href="https://wa.me/5511961850780?text=Olá!%20Preciso%20de%20ajuda%20com%20o%20FruitFlix%20IA." target="_blank" class="btn-wpp-large" id="wpp-large-btn">
+        <span class="wpp-logo">💬</span>
+        INICIAR CONVERSA NO WHATSAPP
+      </a>
+      <p style="font-size:0.78rem;color:var(--muted);margin-top:12px;">Ao clicar, você será redirecionado para o WhatsApp com uma mensagem pronta.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <h2>Perguntas Frequentes</h2>
+      <p class="faq-sub">Encontre respostas rápidas para as dúvidas mais comuns.</p>
+
+      <div class="faq-list">
+
+        <div class="faq-item" id="faq-1">
+          <button class="faq-q" onclick="toggleFaq('faq-1')" id="faq-btn-1">
+            Como acesso a plataforma após o pagamento?
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a" id="faq-a-1">
+            <p>Após a confirmação do seu pagamento, você receberá as instruções de acesso imediatamente. Caso não receba em até 10 minutos, entre em contato via <a href="https://wa.me/5511961850780" target="_blank">WhatsApp</a> e nosso time te enviará o acesso na hora.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq-2">
+          <button class="faq-q" onclick="toggleFaq('faq-2')" id="faq-btn-2">
+            Posso assistir no celular e no computador?
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a" id="faq-a-2">
+            <p>Sim! O FruitFlix IA funciona em qualquer dispositivo com acesso à internet: celular (Android e iPhone), tablet, notebook e computador. Não é necessário baixar nenhum aplicativo.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq-3">
+          <button class="faq-q" onclick="toggleFaq('faq-3')" id="faq-btn-3">
+            Tem cobrança recorrente automática?
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a" id="faq-a-3">
+            <p>Não. O pagamento de R$ 19,90 é pontual, sem cobrança automática recorrente. Quando seu período de acesso expirar, você receberá um aviso e poderá decidir se deseja renovar.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq-4">
+          <button class="faq-q" onclick="toggleFaq('faq-4')" id="faq-btn-4">
+            Posso cancelar e ter reembolso?
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a" id="faq-a-4">
+            <p>Sim. Caso não fique satisfeito, entre em contato via <a href="https://wa.me/5511961850780" target="_blank">WhatsApp</a> em até 7 dias corridos após a compra e processaremos o reembolso integral, conforme o Código de Defesa do Consumidor.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq-5">
+          <button class="faq-q" onclick="toggleFaq('faq-5')" id="faq-btn-5">
+            Os episódios são os mesmos que aparecem no TikTok?
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a" id="faq-a-5">
+            <p>As redes sociais mostram apenas trechos curtos para gerar curiosidade. Na plataforma você tem acesso aos episódios COMPLETOS, sem cortes, além de conteúdos exclusivos que nunca foram publicados nas redes.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq-6">
+          <button class="faq-q" onclick="toggleFaq('faq-6')" id="faq-btn-6">
+            Com que frequência entram conteúdos novos?
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a" id="faq-a-6">
+            <p>Nossa equipe adiciona novos episódios e novas novelas toda semana. Você nunca ficará sem conteúdo novo para maratonar!</p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq-7">
+          <button class="faq-q" onclick="toggleFaq('faq-7')" id="faq-btn-7">
+            O pagamento é seguro?
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a" id="faq-a-7">
+            <p>Sim! Todos os pagamentos são processados por gateways certificados com criptografia SSL. Não armazenamos dados de cartão. Em caso de dúvida sobre uma cobrança, <a href="https://wa.me/5511961850780" target="_blank">entre em contato</a>.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq-8">
+          <button class="faq-q" onclick="toggleFaq('faq-8')" id="faq-btn-8">
+            Minha dúvida não está aqui. O que faço?
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a" id="faq-a-8">
+            <p>Sem problema! Fale diretamente com nossa equipe pelo <a href="https://wa.me/5511961850780?text=Olá!%20Tenho%20uma%20dúvida%20sobre%20o%20FruitFlix%20IA." target="_blank">WhatsApp (+55 11 96185-0780)</a>. Respondemos em poucos minutos.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- FINAL CTA -->
+    <div style="text-align:center;">
+      <p style="font-size:0.9rem;color:var(--muted);margin-bottom:20px;">Ainda tem dúvidas? A gente resolve agora.</p>
+      <a href="https://wa.me/5511961850780?text=Olá!%20Vim%20pelo%20site%20FruitFlix%20IA%20e%20preciso%20de%20ajuda." target="_blank" class="btn-wpp-large" id="wpp-bottom-btn">
+        <span class="wpp-logo">💬</span>
+        FALAR COM SUPORTE AGORA
+      </a>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Início</a>
+      <a href="termos.html">Termos de Uso</a>
+      <a href="privacidade.html">Política de Privacidade</a>
+      <a href="suporte.html">Suporte</a>
+    </div>
+    <p>© 2024 FruitFlix IA. Todos os direitos reservados.</p>
+    <p style="margin-top:6px;font-size:0.72rem;">WhatsApp Suporte: +55 (11) 96185-0780</p>
+  </footer>
+
+  <script>
+    function toggleFaq(id) {
+      const item = document.getElementById(id);
+      const answer = document.getElementById('faq-a-' + id.replace('faq-', ''));
+      const isOpen = item.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(el => {
+        el.classList.remove('open');
+        const a = el.querySelector('.faq-a');
+        if (a) a.classList.remove('open');
+      });
+
+      // Open if was closed
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.classList.add('open');
+      }
+    }
+  </script>
+
+</body>
+</html>

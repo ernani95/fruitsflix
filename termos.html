@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Termos de Uso — FruitFlix IA</title>
+  <meta name="description" content="Termos de Uso da plataforma FruitFlix IA. Leia nossas condições de uso antes de acessar a plataforma." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #E50914; --red-dark: #b20710; --red-glow: rgba(229,9,20,0.35);
+      --gold: #FFD700;
+      --bg: #0a0a0d; --bg2: #111118; --bg3: #16161f;
+      --card: #1a1a26;
+      --text: #f0f0f5; --muted: #8888a0;
+      --border: rgba(255,255,255,0.07);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; }
+
+    /* TOPBAR */
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 40px;
+      background: rgba(10,10,13,0.97);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-family: 'Oswald', sans-serif; font-size: 1.7rem; font-weight: 700;
+      color: var(--red); letter-spacing: -0.5px;
+      text-decoration: none; display: flex; align-items: center; gap: 8px;
+      text-shadow: 0 0 20px var(--red-glow);
+    }
+    .logo span { color: var(--text); }
+    .logo .badge {
+      background: var(--gold); color: #000;
+      font-family: 'Inter', sans-serif; font-size: 0.5rem; font-weight: 800;
+      padding: 2px 5px; border-radius: 4px; letter-spacing: 1px;
+      align-self: flex-start; margin-top: 4px;
+    }
+    .back-btn {
+      background: var(--card); border: 1px solid var(--border);
+      color: var(--muted); font-size: 0.83rem; font-weight: 600;
+      padding: 9px 18px; border-radius: 8px;
+      text-decoration: none; transition: all 0.2s;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .back-btn:hover { border-color: rgba(229,9,20,0.4); color: var(--text); }
+
+    /* HERO */
+    .page-hero {
+      padding: 60px 40px 50px;
+      background: linear-gradient(180deg, rgba(229,9,20,0.07) 0%, transparent 100%);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    .page-tag {
+      display: inline-block;
+      background: rgba(229,9,20,0.1); border: 1px solid rgba(229,9,20,0.3);
+      color: #ff6b75; font-size: 0.72rem; font-weight: 700;
+      padding: 4px 14px; border-radius: 100px;
+      letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px;
+    }
+    .page-title {
+      font-family: 'Oswald', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700; margin-bottom: 12px;
+    }
+    .page-updated { font-size: 0.82rem; color: var(--muted); }
+
+    /* CONTENT */
+    .content-wrapper {
+      max-width: 800px; margin: 60px auto; padding: 0 24px 80px;
+    }
+    .toc {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px 28px; margin-bottom: 48px;
+    }
+    .toc h3 {
+      font-size: 0.85rem; font-weight: 700; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px;
+    }
+    .toc ol { padding-left: 18px; display: flex; flex-direction: column; gap: 8px; }
+    .toc a { color: var(--red); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .toc a:hover { color: #ff6b75; }
+
+    .section-block { margin-bottom: 48px; }
+    .section-block h2 {
+      font-family: 'Oswald', sans-serif; font-size: 1.4rem; font-weight: 700;
+      color: var(--text); margin-bottom: 16px;
+      padding-bottom: 12px; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-block h2 .num {
+      width: 28px; height: 28px; border-radius: 6px;
+      background: var(--red); color: #fff;
+      font-size: 0.8rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .section-block p { color: var(--muted); font-size: 0.93rem; margin-bottom: 12px; }
+    .section-block p strong { color: var(--text); }
+    .section-block ul { padding-left: 20px; display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+    .section-block ul li { color: var(--muted); font-size: 0.93rem; }
+    .section-block ul li::marker { color: var(--red); }
+
+    .highlight-box {
+      background: rgba(229,9,20,0.06);
+      border: 1px solid rgba(229,9,20,0.18);
+      border-radius: 10px; padding: 18px 20px;
+      margin: 16px 0;
+    }
+    .highlight-box p { margin: 0; color: #ff9999; }
+
+    /* FOOTER */
+    footer {
+      padding: 30px 24px; text-align: center;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem; color: var(--muted);
+    }
+    footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--text); }
+    .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 10px; }
+
+    @media (max-width: 600px) {
+      .topbar { padding: 14px 16px; }
+      .page-hero { padding: 40px 16px 36px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <a href="index.html" class="logo">🍓 Fruit<span>Flix</span><span class="badge">IA</span></a>
+    <a href="index.html" class="back-btn" id="back-home-btn">← Voltar ao início</a>
+  </header>
+
+  <div class="page-hero">
+    <div class="page-tag">📄 DOCUMENTO LEGAL</div>
+    <h1 class="page-title">Termos de Uso</h1>
+    <p class="page-updated">Última atualização: 13 de abril de 2024</p>
+  </div>
+
+  <div class="content-wrapper">
+
+    <div class="toc">
+      <h3>📋 Índice</h3>
+      <ol>
+        <li><a href="#aceitacao">Aceitação dos Termos</a></li>
+        <li><a href="#servico">Descrição do Serviço</a></li>
+        <li><a href="#acesso">Acesso e Conta</a></li>
+        <li><a href="#pagamento">Pagamento e Assinatura</a></li>
+        <li><a href="#uso-permitido">Uso Permitido</a></li>
+        <li><a href="#propriedade">Propriedade Intelectual</a></li>
+        <li><a href="#conteudo">Conteúdo da Plataforma</a></li>
+        <li><a href="#privacidade">Privacidade</a></li>
+        <li><a href="#rescisao">Rescisão</a></li>
+        <li><a href="#limitacao">Limitação de Responsabilidade</a></li>
+        <li><a href="#alteracoes">Alterações dos Termos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ol>
+    </div>
+
+    <div class="section-block" id="aceitacao">
+      <h2><span class="num">1</span> Aceitação dos Termos</h2>
+      <p>Ao acessar ou utilizar a plataforma <strong>FruitFlix IA</strong>, você concorda em ficar vinculado a estes Termos de Uso, à nossa Política de Privacidade e a todas as leis e regulamentos aplicáveis. Se você não concordar com qualquer parte destes termos, não deverá utilizar o serviço.</p>
+      <p>O acesso e uso desta plataforma são condicionados à sua aceitação e conformidade com estes Termos. Estes Termos se aplicam a todos os visitantes, usuários e demais pessoas que acessam ou utilizam o serviço.</p>
+      <div class="highlight-box">
+        <p>⚠️ Ao realizar o pagamento e acessar a plataforma, você confirma que leu, compreendeu e aceita integralmente estes Termos de Uso.</p>
+      </div>
+    </div>
+
+    <div class="section-block" id="servico">
+      <h2><span class="num">2</span> Descrição do Serviço</h2>
+      <p>O <strong>FruitFlix IA</strong> é uma plataforma digital de entretenimento que disponibiliza conteúdo audiovisual criado por Inteligência Artificial, composto por novelas curtas com personagens animados (frutas) e tramas dramáticas e ficcionais.</p>
+      <ul>
+        <li>Acesso a biblioteca de episódios completos de novelas de frutas animadas com IA</li>
+        <li>Novos conteúdos adicionados semanalmente</li>
+        <li>Acesso via dispositivos móveis, tablets e computadores</li>
+        <li>Conteúdo exclusivo não disponível em plataformas de redes sociais</li>
+      </ul>
+      <p>O serviço é fornecido "<strong>como está</strong>" e "<strong>conforme disponível</strong>". A FruitFlix IA não garante que o serviço será ininterrupto, pontual, seguro ou livre de erros.</p>
+    </div>
+
+    <div class="section-block" id="acesso">
+      <h2><span class="num">3</span> Acesso e Conta</h2>
+      <p>Para utilizar o serviço, você precisará criar uma conta ou receber as credenciais de acesso após a conclusão do pagamento.</p>
+      <ul>
+        <li>Você é responsável por manter a confidencialidade das suas credenciais de acesso</li>
+        <li>Não é permitido compartilhar ou transferir o acesso para terceiros</li>
+        <li>O acesso é de uso pessoal e intransferível</li>
+        <li>Você deve ter pelo menos 13 anos de idade para criar uma conta</li>
+        <li>Todas as informações fornecidas devem ser verdadeiras e atualizadas</li>
+      </ul>
+      <p>Em caso de uso não autorizado da sua conta, entre em contato imediatamente com nosso suporte.</p>
+    </div>
+
+    <div class="section-block" id="pagamento">
+      <h2><span class="num">4</span> Pagamento e Assinatura</h2>
+      <p>O acesso à plataforma é disponibilizado mediante pagamento conforme os planos anunciados. Atualmente, o plano de acesso é oferecido pelo valor de <strong>R$ 19,90</strong> (sujeito a alterações).</p>
+      <ul>
+        <li>Os pagamentos são processados por meio de gateways de pagamento seguros</li>
+        <li>Todos os preços são exibidos em Reais (BRL)</li>
+        <li>O acesso é disponibilizado imediatamente após a confirmação do pagamento</li>
+        <li>Não há cobrança automática recorrente sem prévio aviso e consentimento</li>
+      </ul>
+      <div class="highlight-box">
+        <p>💡 Em caso de problemas com o pagamento, entre em contato com nosso suporte pelo WhatsApp: <strong>+55 (11) 96185-0780</strong></p>
+      </div>
+    </div>
+
+    <div class="section-block" id="uso-permitido">
+      <h2><span class="num">5</span> Uso Permitido</h2>
+      <p>Ao utilizar a plataforma FruitFlix IA, você concorda em <strong>NÃO</strong>:</p>
+      <ul>
+        <li>Reproduzir, distribuir, copiar ou compartilhar qualquer conteúdo da plataforma sem autorização expressa</li>
+        <li>Realizar engenharia reversa, decompilar ou tentar extrair o código-fonte da plataforma</li>
+        <li>Usar robôs, scrapers ou outros meios automatizados para acessar o conteúdo</li>
+        <li>Transmitir vírus ou qualquer código de natureza destrutiva</li>
+        <li>Tentar acessar áreas restritas da plataforma sem autorização</li>
+        <li>Utilizar o serviço para fins ilegais ou não autorizados</li>
+        <li>Revender ou sublicenciar o acesso a terceiros</li>
+      </ul>
+    </div>
+
+    <div class="section-block" id="propriedade">
+      <h2><span class="num">6</span> Propriedade Intelectual</h2>
+      <p>Todo o conteúdo disponibilizado na plataforma FruitFlix IA, incluindo mas não se limitando a vídeos, personagens, roteiros, trilhas sonoras, logotipos, design e código, é de propriedade exclusiva da <strong>FruitFlix IA</strong> ou de seus licenciadores, e está protegido pelas leis de propriedade intelectual aplicáveis.</p>
+      <p>É concedida ao usuário uma licença <strong>limitada, não exclusiva, intransferível e revogável</strong> para acessar e utilizar o conteúdo exclusivamente para fins pessoais e não comerciais.</p>
+    </div>
+
+    <div class="section-block" id="conteudo">
+      <h2><span class="num">7</span> Conteúdo da Plataforma</h2>
+      <p>Todo o conteúdo disponibilizado é de natureza <strong>fictícia e de entretenimento</strong>. Os personagens, histórias e situações apresentadas:</p>
+      <ul>
+        <li>São completamente fictícios e criados por Inteligência Artificial</li>
+        <li>Não representam situações reais, pessoas ou eventos</li>
+        <li>São destinados ao entretenimento adulto e jovem adulto</li>
+        <li>Podem conter cenas de drama, conflito e situações intensas de natureza fictícia</li>
+      </ul>
+    </div>
+
+    <div class="section-block" id="privacidade">
+      <h2><span class="num">8</span> Privacidade</h2>
+      <p>A coleta e uso dos seus dados pessoais são regidos pela nossa <a href="privacidade.html" style="color:var(--red)">Política de Privacidade</a>. Ao utilizar nossos serviços, você consente com a coleta e uso de informações conforme descrito nessa política.</p>
+    </div>
+
+    <div class="section-block" id="rescisao">
+      <h2><span class="num">9</span> Rescisão</h2>
+      <p>A FruitFlix IA se reserva o direito de encerrar ou suspender o acesso à plataforma, a qualquer momento, sem aviso prévio, por motivos que incluem:</p>
+      <ul>
+        <li>Violação destes Termos de Uso</li>
+        <li>Comportamento fraudulento ou abusivo</li>
+        <li>Tentativa de comprometer a segurança da plataforma</li>
+        <li>Qualquer atividade que prejudique outros usuários ou a plataforma</li>
+      </ul>
+    </div>
+
+    <div class="section-block" id="limitacao">
+      <h2><span class="num">10</span> Limitação de Responsabilidade</h2>
+      <p>Na máxima extensão permitida pela lei, a FruitFlix IA não será responsável por quaisquer danos indiretos, incidentais, especiais, consequenciais ou punitivos resultantes do uso ou incapacidade de uso do serviço.</p>
+      <p>A responsabilidade total da FruitFlix IA perante você por quaisquer danos não excederá o valor pago por você pelo serviço nos últimos 3 (três) meses.</p>
+    </div>
+
+    <div class="section-block" id="alteracoes">
+      <h2><span class="num">11</span> Alterações dos Termos</h2>
+      <p>Reservamo-nos o direito de modificar ou substituir estes Termos a qualquer momento a nosso critério. Caso a revisão seja significativa, notificaremos com pelo menos <strong>15 dias</strong> de antecedência antes de quaisquer novos termos entrarem em vigor.</p>
+      <p>O que constitui uma alteração significativa será determinado a nosso critério. Ao continuar a acessar ou usar nosso serviço após essas revisões entrarem em vigor, você concorda em ficar vinculado aos termos revisados.</p>
+    </div>
+
+    <div class="section-block" id="contato">
+      <h2><span class="num">12</span> Contato</h2>
+      <p>Em caso de dúvidas sobre estes Termos de Uso, entre em contato conosco:</p>
+      <ul>
+        <li>📱 <strong>WhatsApp:</strong> <a href="https://wa.me/5511961850780" target="_blank" style="color:var(--red)">+55 (11) 96185-0780</a></li>
+        <li>💬 <strong>Suporte:</strong> <a href="suporte.html" style="color:var(--red)">Acessar página de suporte</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Início</a>
+      <a href="termos.html">Termos de Uso</a>
+      <a href="privacidade.html">Política de Privacidade</a>
+      <a href="suporte.html">Suporte</a>
+    </div>
+    <p>© 2024 FruitFlix IA. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidade — FruitFlix IA</title>
+  <meta name="description" content="Política de Privacidade da FruitFlix IA. Saiba como coletamos, usamos e protegemos seus dados pessoais." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #E50914; --red-dark: #b20710; --red-glow: rgba(229,9,20,0.35);
+      --gold: #FFD700;
+      --bg: #0a0a0d; --bg2: #111118; --bg3: #16161f;
+      --card: #1a1a26;
+      --text: #f0f0f5; --muted: #8888a0;
+      --border: rgba(255,255,255,0.07);
+      --blue: #4fc3f7; --blue-dim: rgba(79,195,247,0.08);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; }
+
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 40px;
+      background: rgba(10,10,13,0.97); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-family: 'Oswald', sans-serif; font-size: 1.7rem; font-weight: 700;
+      color: var(--red); letter-spacing: -0.5px; text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+      text-shadow: 0 0 20px var(--red-glow);
+    }
+    .logo span { color: var(--text); }
+    .logo .badge {
+      background: var(--gold); color: #000;
+      font-family: 'Inter', sans-serif; font-size: 0.5rem; font-weight: 800;
+      padding: 2px 5px; border-radius: 4px; letter-spacing: 1px;
+      align-self: flex-start; margin-top: 4px;
+    }
+    .back-btn {
+      background: var(--card); border: 1px solid var(--border);
+      color: var(--muted); font-size: 0.83rem; font-weight: 600;
+      padding: 9px 18px; border-radius: 8px; text-decoration: none;
+      transition: all 0.2s; display: flex; align-items: center; gap: 6px;
+    }
+    .back-btn:hover { border-color: rgba(229,9,20,0.4); color: var(--text); }
+
+    .page-hero {
+      padding: 60px 40px 50px;
+      background: linear-gradient(180deg, rgba(79,195,247,0.05) 0%, transparent 100%);
+      border-bottom: 1px solid var(--border); text-align: center;
+    }
+    .page-tag {
+      display: inline-block;
+      background: var(--blue-dim); border: 1px solid rgba(79,195,247,0.2);
+      color: var(--blue); font-size: 0.72rem; font-weight: 700;
+      padding: 4px 14px; border-radius: 100px;
+      letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px;
+    }
+    .page-title {
+      font-family: 'Oswald', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700; margin-bottom: 12px;
+    }
+    .page-updated { font-size: 0.82rem; color: var(--muted); }
+
+    /* LGPD BADGE */
+    .lgpd-banner {
+      max-width: 800px; margin: 40px auto 0; padding: 0 24px;
+    }
+    .lgpd-card {
+      background: var(--blue-dim); border: 1px solid rgba(79,195,247,0.2);
+      border-radius: 12px; padding: 20px 24px;
+      display: flex; align-items: flex-start; gap: 16px;
+    }
+    .lgpd-icon { font-size: 2rem; flex-shrink: 0; }
+    .lgpd-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--blue); margin-bottom: 6px; }
+    .lgpd-card p { font-size: 0.85rem; color: var(--muted); }
+
+    .content-wrapper { max-width: 800px; margin: 40px auto; padding: 0 24px 80px; }
+
+    .toc {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px 28px; margin-bottom: 48px;
+    }
+    .toc h3 {
+      font-size: 0.85rem; font-weight: 700; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px;
+    }
+    .toc ol { padding-left: 18px; display: flex; flex-direction: column; gap: 8px; }
+    .toc a { color: var(--blue); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .toc a:hover { color: #81d4fa; }
+
+    .section-block { margin-bottom: 48px; }
+    .section-block h2 {
+      font-family: 'Oswald', sans-serif; font-size: 1.4rem; font-weight: 700;
+      color: var(--text); margin-bottom: 16px;
+      padding-bottom: 12px; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-block h2 .num {
+      width: 28px; height: 28px; border-radius: 6px;
+      background: var(--blue); color: #000;
+      font-size: 0.8rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .section-block p { color: var(--muted); font-size: 0.93rem; margin-bottom: 12px; }
+    .section-block p strong { color: var(--text); }
+    .section-block ul { padding-left: 20px; display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+    .section-block ul li { color: var(--muted); font-size: 0.93rem; }
+    .section-block ul li::marker { color: var(--blue); }
+
+    .data-table {
+      width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.85rem;
+      border-radius: 10px; overflow: hidden;
+    }
+    .data-table th {
+      background: rgba(79,195,247,0.1); color: var(--blue);
+      padding: 12px 16px; text-align: left; font-weight: 700; font-size: 0.78rem;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .data-table td {
+      padding: 12px 16px; color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+    .data-table tr:first-child td { border-top: none; }
+    .data-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    .highlight-box {
+      background: rgba(79,195,247,0.05); border: 1px solid rgba(79,195,247,0.15);
+      border-radius: 10px; padding: 18px 20px; margin: 16px 0;
+    }
+    .highlight-box p { margin: 0; color: #81d4fa; }
+
+    .rights-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px; margin-top: 16px;
+    }
+    .right-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 16px 18px;
+      transition: border-color 0.3s;
+    }
+    .right-card:hover { border-color: rgba(79,195,247,0.25); }
+    .right-card .icon { font-size: 1.4rem; margin-bottom: 8px; }
+    .right-card h4 { font-size: 0.85rem; font-weight: 700; margin-bottom: 4px; }
+    .right-card p { font-size: 0.78rem; color: var(--muted); margin: 0; }
+
+    footer {
+      padding: 30px 24px; text-align: center;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem; color: var(--muted);
+    }
+    footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--text); }
+    .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 10px; }
+
+    @media (max-width: 600px) {
+      .topbar { padding: 14px 16px; }
+      .page-hero { padding: 40px 16px 36px; }
+      .data-table { font-size: 0.78rem; }
+      .data-table th, .data-table td { padding: 10px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <a href="index.html" class="logo">🍓 Fruit<span>Flix</span><span class="badge">IA</span></a>
+    <a href="index.html" class="back-btn" id="back-home-btn">← Voltar ao início</a>
+  </header>
+
+  <div class="page-hero">
+    <div class="page-tag">🔒 LGPD COMPLIANT</div>
+    <h1 class="page-title">Política de Privacidade</h1>
+    <p class="page-updated">Última atualização: 13 de abril de 2024</p>
+  </div>
+
+  <div class="lgpd-banner">
+    <div class="lgpd-card">
+      <div class="lgpd-icon">🛡️</div>
+      <div>
+        <h3>Seus dados estão protegidos</h3>
+        <p>Esta política está em conformidade com a <strong>Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)</strong>. Tratamos seus dados com transparência, segurança e respeito à sua privacidade.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+
+    <div class="toc">
+      <h3>📋 Índice</h3>
+      <ol>
+        <li><a href="#intro">Introdução</a></li>
+        <li><a href="#dados-coletados">Dados que Coletamos</a></li>
+        <li><a href="#como-coletamos">Como Coletamos</a></li>
+        <li><a href="#finalidade">Finalidade do Uso</a></li>
+        <li><a href="#compartilhamento">Compartilhamento</a></li>
+        <li><a href="#retencao">Retenção de Dados</a></li>
+        <li><a href="#seguranca">Segurança</a></li>
+        <li><a href="#cookies">Cookies</a></li>
+        <li><a href="#direitos">Seus Direitos (LGPD)</a></li>
+        <li><a href="#menores">Menores de Idade</a></li>
+        <li><a href="#alteracoes">Alterações</a></li>
+        <li><a href="#contato">Contato do DPO</a></li>
+      </ol>
+    </div>
+
+    <div class="section-block" id="intro">
+      <h2><span class="num">1</span> Introdução</h2>
+      <p>A <strong>FruitFlix IA</strong> está comprometida em proteger e respeitar sua privacidade. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e protegemos suas informações pessoais quando você acessa nossa plataforma de streaming.</p>
+      <p>Ao utilizar nossos serviços, você está ciente e concorda com as práticas descritas neste documento. Leia esta política com atenção antes de usar a plataforma.</p>
+    </div>
+
+    <div class="section-block" id="dados-coletados">
+      <h2><span class="num">2</span> Dados que Coletamos</h2>
+      <p>Coletamos os seguintes tipos de informações:</p>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Tipo de Dado</th>
+            <th>Exemplos</th>
+            <th>Finalidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Identificação</strong></td>
+            <td>Nome, e-mail, CPF (quando aplicável)</td>
+            <td>Cadastro e autenticação</td>
+          </tr>
+          <tr>
+            <td><strong>Pagamento</strong></td>
+            <td>Dados de transação (não armazenamos dados de cartão)</td>
+            <td>Processamento de pagamento</td>
+          </tr>
+          <tr>
+            <td><strong>Uso</strong></td>
+            <td>Histórico de vídeos assistidos, preferências</td>
+            <td>Melhorar a experiência</td>
+          </tr>
+          <tr>
+            <td><strong>Técnicos</strong></td>
+            <td>Endereço IP, tipo de navegador, dispositivo</td>
+            <td>Segurança e diagnóstico</td>
+          </tr>
+          <tr>
+            <td><strong>Comunicação</strong></td>
+            <td>Mensagens de suporte, feedback</td>
+            <td>Atendimento ao cliente</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-block" id="como-coletamos">
+      <h2><span class="num">3</span> Como Coletamos seus Dados</h2>
+      <ul>
+        <li><strong>Diretamente por você:</strong> Dados fornecidos no cadastro, pagamento ou contato com suporte</li>
+        <li><strong>Automaticamente:</strong> Cookies, pixels de rastreamento e logs de acesso</li>
+        <li><strong>Terceiros:</strong> Plataformas de pagamento, redes sociais e ferramentas de análise</li>
+      </ul>
+    </div>
+
+    <div class="section-block" id="finalidade">
+      <h2><span class="num">4</span> Finalidade do Uso dos Dados</h2>
+      <p>Utilizamos seus dados pessoais para as seguintes finalidades:</p>
+      <ul>
+        <li>✅ Gerenciar seu acesso à plataforma e autenticar sua identidade</li>
+        <li>✅ Processar pagamentos e garantir a entrega do serviço</li>
+        <li>✅ Personalizar sua experiência de entretenimento</li>
+        <li>✅ Enviar comunicações relevantes sobre seu acesso</li>
+        <li>✅ Oferecer suporte técnico e atendimento ao cliente</li>
+        <li>✅ Melhorar e desenvolver nossa plataforma</li>
+        <li>✅ Cumprir obrigações legais e regulatórias</li>
+        <li>✅ Prevenir fraudes e garantir a segurança</li>
+      </ul>
+      <div class="highlight-box">
+        <p>🔒 Seus dados <strong>nunca são vendidos</strong> a terceiros para fins de marketing sem seu consentimento expresso.</p>
+      </div>
+    </div>
+
+    <div class="section-block" id="compartilhamento">
+      <h2><span class="num">5</span> Compartilhamento de Dados</h2>
+      <p>Podemos compartilhar seus dados apenas nas seguintes situações:</p>
+      <ul>
+        <li><strong>Processadores de pagamento</strong> (ex.: Stripe, PagSeguro, Mercado Pago) para conclusão de transações</li>
+        <li><strong>Provedores de cloud</strong> para hospedagem e armazenamento seguro</li>
+        <li><strong>Ferramentas de análise</strong> (ex.: Google Analytics) com dados anonimizados</li>
+        <li><strong>Autoridades legais</strong> quando exigido por lei ou ordem judicial</li>
+      </ul>
+      <p>Todos os terceiros que processam seus dados estão sujeitos a acordos de confidencialidade e devem cumprir a LGPD.</p>
+    </div>
+
+    <div class="section-block" id="retencao">
+      <h2><span class="num">6</span> Retenção de Dados</h2>
+      <p>Mantemos seus dados pessoais pelo tempo necessário para cumprir as finalidades descritas nesta política, ou conforme exigido por lei:</p>
+      <ul>
+        <li><strong>Dados de conta:</strong> Enquanto a conta estiver ativa + 90 dias após encerramento</li>
+        <li><strong>Dados de pagamento:</strong> Conforme exigido pela legislação fiscal (até 5 anos)</li>
+        <li><strong>Logs de acesso:</strong> Até 6 meses (conforme Marco Civil da Internet)</li>
+        <li><strong>Dados de suporte:</strong> Até 2 anos após o último contato</li>
+      </ul>
+    </div>
+
+    <div class="section-block" id="seguranca">
+      <h2><span class="num">7</span> Segurança dos Dados</h2>
+      <p>Implementamos medidas técnicas e organizacionais para proteger seus dados:</p>
+      <ul>
+        <li>🔐 Criptografia SSL/TLS em todas as comunicações</li>
+        <li>🔐 Armazenamento de senhas com hash criptográfico seguro</li>
+        <li>🔐 Controle de acesso restrito aos dados pessoais</li>
+        <li>🔐 Monitoramento contínuo de segurança</li>
+        <li>🔐 Backups regulares e protegidos</li>
+      </ul>
+      <p>Em caso de incidente de segurança que possa afetar seus dados, notificaremos você e a ANPD conforme exigido pela LGPD.</p>
+    </div>
+
+    <div class="section-block" id="cookies">
+      <h2><span class="num">8</span> Cookies e Tecnologias de Rastreamento</h2>
+      <p>Utilizamos cookies e tecnologias similares para melhorar sua experiência na plataforma:</p>
+      <ul>
+        <li><strong>Cookies essenciais:</strong> Necessários para o funcionamento básico da plataforma</li>
+        <li><strong>Cookies de preferência:</strong> Recordam suas configurações e preferências</li>
+        <li><strong>Cookies analíticos:</strong> Nos ajudam a entender como você usa a plataforma</li>
+        <li><strong>Cookies de marketing:</strong> Usados para anúncios relevantes (com seu consentimento)</li>
+      </ul>
+      <p>Você pode gerenciar os cookies pelas configurações do seu navegador. A desativação de cookies essenciais pode afetar o funcionamento da plataforma.</p>
+    </div>
+
+    <div class="section-block" id="direitos">
+      <h2><span class="num">9</span> Seus Direitos (LGPD)</h2>
+      <p>Conforme a <strong>Lei Geral de Proteção de Dados (LGPD)</strong>, você tem os seguintes direitos em relação aos seus dados pessoais:</p>
+      <div class="rights-grid">
+        <div class="right-card">
+          <div class="icon">👁️</div>
+          <h4>Acesso</h4>
+          <p>Solicitar uma cópia dos seus dados que temos</p>
+        </div>
+        <div class="right-card">
+          <div class="icon">✏️</div>
+          <h4>Correção</h4>
+          <p>Corrigir dados incompletos ou incorretos</p>
+        </div>
+        <div class="right-card">
+          <div class="icon">🗑️</div>
+          <h4>Exclusão</h4>
+          <p>Solicitar a remoção dos seus dados pessoais</p>
+        </div>
+        <div class="right-card">
+          <div class="icon">⛔</div>
+          <h4>Oposição</h4>
+          <p>Opor-se ao tratamento dos seus dados</p>
+        </div>
+        <div class="right-card">
+          <div class="icon">📦</div>
+          <h4>Portabilidade</h4>
+          <p>Receber seus dados em formato estruturado</p>
+        </div>
+        <div class="right-card">
+          <div class="icon">↩️</div>
+          <h4>Revogação</h4>
+          <p>Revogar consentimento a qualquer momento</p>
+        </div>
+      </div>
+      <p style="margin-top:20px;">Para exercer qualquer um desses direitos, entre em contato pelo WhatsApp: <a href="https://wa.me/5511961850780" target="_blank" style="color:var(--blue)">+55 (11) 96185-0780</a></p>
+    </div>
+
+    <div class="section-block" id="menores">
+      <h2><span class="num">10</span> Menores de Idade</h2>
+      <p>Nossa plataforma não é direcionada a crianças menores de 13 anos. Não coletamos intencionalmente dados pessoais de crianças menores de 13 anos. Se você é pai ou responsável e acredita que seu filho nos forneceu dados, entre em contato para que possamos removê-los.</p>
+    </div>
+
+    <div class="section-block" id="alteracoes">
+      <h2><span class="num">11</span> Alterações desta Política</h2>
+      <p>Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos sobre alterações significativas por e-mail ou por aviso em destaque na plataforma, com antecedência de pelo menos <strong>15 dias</strong>.</p>
+      <p>Recomendamos revisar esta política regularmente. O uso contínuo da plataforma após as alterações constitui aceitação da política revisada.</p>
+    </div>
+
+    <div class="section-block" id="contato">
+      <h2><span class="num">12</span> Contato e DPO</h2>
+      <p>Para questões relacionadas à privacidade e proteção de dados, ou para exercer seus direitos conforme a LGPD, entre em contato:</p>
+      <ul>
+        <li>📱 <strong>WhatsApp:</strong> <a href="https://wa.me/5511961850780" target="_blank" style="color:var(--blue)">+55 (11) 96185-0780</a></li>
+        <li>💬 <strong>Página de Suporte:</strong> <a href="suporte.html" style="color:var(--blue)">Acessar suporte</a></li>
+      </ul>
+      <p>Nosso time responde em até <strong>48 horas úteis</strong>. Para questões urgentes de privacidade relacionadas a violações de dados, responderemos em até 24 horas.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Início</a>
+      <a href="termos.html">Termos de Uso</a>
+      <a href="privacidade.html">Política de Privacidade</a>
+      <a href="suporte.html">Suporte</a>
+    </div>
+    <p>© 2024 FruitFlix IA. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
