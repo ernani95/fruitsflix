@@ -255,7 +255,7 @@
 
     /* ===== CLIFFHANGER ===== */
     .cliffhanger-section {
-      padding: 70px 0;
+      padding: 45px 0;
       background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 50%, var(--bg) 100%);
     }
     .cliffhanger-card {
@@ -325,7 +325,7 @@
 
     /* ===== PATTERN BREAK ===== */
     .pattern-break {
-      padding: 70px 0;
+      padding: 45px 0;
       text-align: center;
     }
     .problem-grid {
@@ -345,7 +345,7 @@
 
     /* ===== PLATFORM INTRO ===== */
     .platform-section {
-      padding: 70px 0;
+      padding: 45px 0;
       background: linear-gradient(180deg, var(--bg) 0%, var(--bg3) 100%);
     }
     .platform-split {
@@ -370,7 +370,7 @@
 
     /* ===== BENEFITS ===== */
     .benefits-section {
-      padding: 70px 0; text-align: center;
+      padding: 45px 0; text-align: center;
     }
     .benefits-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -398,7 +398,7 @@
 
     /* ===== BINGE SECTION ===== */
     .binge-section {
-      padding: 70px 0;
+      padding: 45px 0;
       background: var(--bg2);
       text-align: center;
     }
@@ -427,7 +427,7 @@
     .binge-step p { font-size: 0.85rem; color: var(--muted); }
 
     /* ===== TESTIMONIALS ===== */
-    .testimonials-section { padding: 70px 0; text-align: center; }
+    .testimonials-section { padding: 45px 0; text-align: center; }
     .testimonials-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px; margin-top: 40px;
@@ -455,7 +455,7 @@
 
     /* ===== URGENCY ===== */
     .urgency-section {
-      padding: 60px 0;
+      padding: 45px 0;
       background: linear-gradient(135deg, rgba(229,9,20,0.07) 0%, transparent 60%);
       border-top: 1px solid rgba(229,9,20,0.12);
       border-bottom: 1px solid rgba(229,9,20,0.12);
@@ -613,12 +613,13 @@
       .topbar-cta { padding: 8px 12px; font-size: 0.75rem; }
       .logo { font-size: 1.4rem; }
       .platform-split { grid-template-columns: 1fr; }
-      .hero { padding: 150px 16px 80px; }
+      .hero { padding: 130px 16px 60px; }
       .hero-stats { gap: 14px; }
       .stat-divider { display: none; }
       .stat-num { font-size: 1.6rem; }
       .stat-label { font-size: 0.65rem; }
       .pricing-card { padding: 28px 20px; }
+      .cliffhanger-section, .pattern-break, .platform-section, .benefits-section, .binge-section, .testimonials-section, .urgency-section { padding: 35px 0; }
       .pre-headline { font-size: 0.68rem; padding: 8px 14px; text-align: left; display: block; line-height: 1.4; border-radius: 12px; }
       .pre-headline .dot { display: inline-block; margin-right: 5px; margin-bottom: 2px; }
       .scroll-hint { display: none; } /* Hide on mobile to prevent overlapping with sticky CTA */
@@ -644,9 +645,7 @@
 
   <!-- URGENCY BANNER -->
   <div class="urgency-banner">
-    <span class="fire">🔥</span>
-    <span class="banner-text-desktop">TREND EM ALTA — Vagas Limitadas Esta Semana &nbsp;|&nbsp; <span class="fire">🔥</span> +42.000 pessoas já assistindo AGORA</span>
-    <span class="banner-text-mobile">TREND EM ALTA — Vagas Limitadas!</span>
+    ⚠️ Apenas 47 acessos restantes neste preço. Quando esgotar, volta para R$59,90.
   </div>
 
   <!-- TOPBAR -->
@@ -670,36 +669,22 @@
       </div>
 
       <h1 class="headline">
-        A novela que você viu no TikTok<br />
-        <span class="highlight">não termina onde você parou.</span>
+        Você viu só o começo…
       </h1>
-
       <p class="subheadline">
-        <strong>Mais de 42 mil pessoas</strong> estão maratonando os episódios completos enquanto você ainda tenta achar o final no Google. A história continua — e é muito mais dramática do que você imagina.
+        O resto da história está esperando por você. Episódios completos, organizados e sem corte das frutas que estão dominando TikTok e Reels.
       </p>
-
-      <div class="hero-stats">
-        <div class="stat">
-          <div class="stat-num">42K+</div>
-          <div class="stat-label">Assinantes Viciados</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <div class="stat-num">200+</div>
-          <div class="stat-label">Episódios Completos</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <div class="stat-num">98%</div>
-          <div class="stat-label">Taxa de Maratona</div>
-        </div>
-      </div>
 
       <div class="hero-cta-group">
         <a href="https://ggcheckout.app/checkout/v4/Ql9c90Bq74JYB6Z9ExeO" class="btn-primary" id="hero-cta-main-btn" target="_blank">
-          🎬 QUERO VER O FINAL AGORA
+          VER O FINAL AGORA — R$19,90 →
         </a>
-        <span class="btn-hint">Acesso imediato por apenas <strong>R$ 19,90</strong> — sem fidelidade</span>
+        <span class="btn-hint">Acesso imediato · Pagamento único · Sem mensalidade</span>
+      </div>
+
+      <!-- Preview Image/GIF Space -->
+      <div class="hero-preview" style="margin-top: 32px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+         <img src="cliffhanger.png" alt="Preview FruitFlix" style="width: 100%; display: block; opacity: 0.8;">
       </div>
     </div>
 
@@ -756,7 +741,7 @@
     <div class="section-inner">
       <span class="section-tag">😤 O PROBLEMA</span>
       <h2 class="section-title">Por que você nunca acha o episódio completo?</h2>
-      <p class="section-sub" style="margin: 0 auto;">As redes sociais foram feitas pra te deixar querendo mais. São 60 segundos de novela — e corta. Estratégico demais.</p>
+      <p class="section-sub" style="margin: 0 auto;">O TikTok mostra 60 segundos e corta na hora mais tensa. Estratégico. Você passa horas procurando o resto — e ou não acha, ou o canal já foi deletado. No FruitFlix IA, cada novela tem começo, meio e fim. Você assiste na ordem certa, sem interrupção, com capítulos novos toda semana.</p>
 
       <div class="problem-grid">
         <div class="problem-card">
@@ -782,6 +767,11 @@
       </div>
     </div>
   </section>
+
+  <!-- CTA INSERT 1 -->
+  <div style="text-align: center; padding-bottom: 45px;">
+    <a href="https://ggcheckout.app/checkout/v4/Ql9c90Bq74JYB6Z9ExeO" class="btn-primary" target="_blank" style="padding: 14px 30px; font-size: 0.95rem;">VER O FINAL AGORA — R$19,90 →</a>
+  </div>
 
   <div class="divider"></div>
 
@@ -868,6 +858,11 @@
     </div>
   </section>
 
+  <!-- CTA INSERT 2 -->
+  <div style="text-align: center; padding-bottom: 45px;">
+    <a href="https://ggcheckout.app/checkout/v4/Ql9c90Bq74JYB6Z9ExeO" class="btn-primary" target="_blank" style="padding: 14px 30px; font-size: 0.95rem;">VER O FINAL AGORA — R$19,90 →</a>
+  </div>
+
   <!-- BINGE WATCHING -->
   <section class="binge-section reveal">
     <div class="section-inner">
@@ -926,7 +921,7 @@
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Entrei só pra ver o final daquela novela do TikTok e fiquei 4 horas assistindo. Não consegui largar. Minha produtividade foi pro espaço mas valeu cada segundo 😂"</p>
+          <p class="testimonial-text">"Entrei pra ver o ep. 7 da Moranguete e fui até o ep. 14 sem perceber. São 2h da manhã, meu marido dormiu, eu não."</p>
           <div class="testimonial-author">
             <div class="author-avatar">J</div>
             <div>
@@ -938,7 +933,7 @@
 
         <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"A Moranguete me fez chorar de verdade. Uma fruta animada me fez chorar. Não sei mais o que é a minha vida, mas continue assim que tá perfeito."</p>
+          <p class="testimonial-text">"Gente gostei muito, tudo organizado"</p>
           <div class="testimonial-author">
             <div class="author-avatar" style="background:linear-gradient(135deg,#e50914,#ff6b00)">K</div>
             <div>
@@ -950,7 +945,7 @@
 
         <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Passei semanas tentando achar os episódios completos nas redes. Quando achei o FruitFlix IA fui diretamente atingida na veia. Já maratonei 3 novelas completas."</p>
+          <p class="testimonial-text">"Passei semanas tentando achar os completos nas redes. Aqui achei tudo em 2 minutos."</p>
           <div class="testimonial-author">
             <div class="author-avatar" style="background:linear-gradient(135deg,#7900cc,#e50914)">A</div>
             <div>
@@ -962,7 +957,7 @@
 
         <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Mostrei pra minha mãe 'só um episódio' e ela ficou até meia noite assistindo. Nunca mais fui culpado de nada em casa desde então."</p>
+          <p class="testimonial-text">"Mostrei só um episódio pra minha mãe. Ela ficou até meia-noite kkk."</p>
           <div class="testimonial-author">
             <div class="author-avatar" style="background:linear-gradient(135deg,#00838f,#006064)">R</div>
             <div>
@@ -974,7 +969,7 @@
 
         <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"R$19,90 mais bem gastos da minha vida. Cancelei o Globoplay e tô aqui maratonando frutas com drama. Sem arrependimentos."</p>
+          <p class="testimonial-text">"Cancelei o Globoplay. R$19,90 mais bem gastos da minha vida."</p>
           <div class="testimonial-author">
             <div class="author-avatar" style="background:linear-gradient(135deg,#e65100,#bf360c)">F</div>
             <div>
@@ -986,7 +981,7 @@
 
         <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Ri, chorei, fiquei com raiva, fiquei com inveja da Moranguete. Tudo em 20 minutos. Isso é entretenimento de outro nível."</p>
+          <p class="testimonial-text">"Ri, chorei, fiquei com raiva. Tudo em 20 minutos."</p>
           <div class="testimonial-author">
             <div class="author-avatar" style="background:linear-gradient(135deg,#1b5e20,#2e7d32)">L</div>
             <div>
@@ -998,6 +993,11 @@
       </div>
     </div>
   </section>
+
+  <!-- CTA INSERT 3 -->
+  <div style="text-align: center; padding-bottom: 45px;">
+    <a href="https://ggcheckout.app/checkout/v4/Ql9c90Bq74JYB6Z9ExeO" class="btn-primary" target="_blank" style="padding: 14px 30px; font-size: 0.95rem;">VER O FINAL AGORA — R$19,90 →</a>
+  </div>
 
   <!-- URGENCY TRIGGERS -->
   <section class="urgency-section reveal">
@@ -1072,10 +1072,10 @@
     </div>
     <h2>O final está esperando por você.</h2>
     <p>Cada segundo que você não assiste é um episódio a mais sendo maratonado por alguém que entrou antes de você.</p>
-    <a href="https://ggcheckout.app/checkout/v4/Ql9c90Bq74JYB6Z9ExeO" class="btn-primary" id="final-cta-btn" style="animation: ctaPulse 2.5s ease infinite;" target="_blank">
-      ⚡ QUERO VER O FINAL AGORA — R$19,90
+    <a href="https://ggcheckout.app/checkout/v4/Ql9c90Bq74JYB6Z9ExeO" class="btn-primary" id="final-cta-btn" style="background: linear-gradient(135deg, #ff4e00 0%, #e50914 100%); animation: ctaPulse 2.5s ease infinite;" target="_blank">
+      ⚡ VER O FINAL AGORA — R$19,90 →
     </a>
-    <p style="margin-top:16px;font-size:0.78rem;color:var(--muted);">🔒 Acesso imediato &nbsp;·&nbsp; Sem mensalidade &nbsp;·&nbsp; Cancele quando quiser</p>
+    <p style="margin-top:16px;font-size:0.78rem;color:var(--muted);">🔒 Acesso imediato · Pagamento único · Sem mensalidade</p>
   </section>
 
   <!-- FOOTER -->
