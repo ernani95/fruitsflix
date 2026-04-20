@@ -605,21 +605,38 @@
       margin: 0 auto; max-width: 600px;
     }
 
+    .banner-text-mobile { display: none; }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-      .topbar { padding: 12px 16px; }
-      .topbar-cta { padding: 8px 14px; font-size: 0.78rem; }
-      .logo { font-size: 1.5rem; }
+      .topbar { padding: 12px 14px; }
+      .topbar-cta { padding: 8px 12px; font-size: 0.75rem; }
+      .logo { font-size: 1.4rem; }
       .platform-split { grid-template-columns: 1fr; }
-      .hero { padding: 120px 16px 70px; }
-      .hero-stats { gap: 18px; }
+      .hero { padding: 150px 16px 80px; }
+      .hero-stats { gap: 14px; }
       .stat-divider { display: none; }
-      .float-badge { right: 12px; bottom: 12px; font-size: 0.72rem; padding: 10px 14px; }
-      .pricing-card { padding: 28px 22px; }
+      .stat-num { font-size: 1.6rem; }
+      .stat-label { font-size: 0.65rem; }
+      .pricing-card { padding: 28px 20px; }
+      .pre-headline { font-size: 0.68rem; padding: 8px 14px; text-align: left; display: block; line-height: 1.4; border-radius: 12px; }
+      .pre-headline .dot { display: inline-block; margin-right: 5px; margin-bottom: 2px; }
+      .scroll-hint { display: none; } /* Hide on mobile to prevent overlapping with sticky CTA */
+      .float-badge { 
+        width: calc(100% - 32px); max-width: none;
+        left: 16px; right: 16px; bottom: 16px; 
+        font-size: 0.85rem; padding: 16px; border-radius: 8px;
+        box-shadow: 0 -4px 30px rgba(0,0,0,0.9), 0 0 20px rgba(229,9,20,0.4);
+        transform: none !important; animation: none;
+      }
     }
     @media (max-width: 480px) {
-      .urgency-banner { font-size: 0.7rem; }
+      .urgency-banner { padding: 6px 10px; font-size: 0.7rem; }
+      .banner-text-desktop { display: none; }
+      .banner-text-mobile { display: inline; }
       body { font-size: 0.95rem; }
+      .headline { font-size: 2.1rem; }
+      .btn-primary { width: 100%; padding: 16px 20px; font-size: 1rem; }
     }
   </style>
 </head>
@@ -628,13 +645,12 @@
   <!-- URGENCY BANNER -->
   <div class="urgency-banner">
     <span class="fire">🔥</span>
-    TREND EM ALTA — Vagas Limitadas Esta Semana &nbsp;|&nbsp;
-    <span class="fire">🔥</span>
-    +42.000 pessoas já assistindo AGORA
+    <span class="banner-text-desktop">TREND EM ALTA — Vagas Limitadas Esta Semana &nbsp;|&nbsp; <span class="fire">🔥</span> +42.000 pessoas já assistindo AGORA</span>
+    <span class="banner-text-mobile">TREND EM ALTA — Vagas Limitadas!</span>
   </div>
 
   <!-- TOPBAR -->
-  <header class="topbar" style="top: 34px;">
+  <header class="topbar">
     <div class="logo">
       🍓 Fruit<span>Flix</span>
       <span class="badge">IA</span>
@@ -1103,13 +1119,17 @@
     // Smooth urgency banner scroll compensation
     const urgencyBanner = document.querySelector('.urgency-banner');
     const topbar = document.querySelector('.topbar');
+    
+    // Set initial top based on banner real height
+    topbar.style.top = urgencyBanner.offsetHeight + 'px';
+
     function adjustTopbar() {
       if (window.scrollY > 60) {
         urgencyBanner.style.transform = 'translateY(-100%)';
         topbar.style.top = '0';
       } else {
         urgencyBanner.style.transform = 'translateY(0)';
-        topbar.style.top = '34px';
+        topbar.style.top = urgencyBanner.offsetHeight + 'px';
       }
     }
     window.addEventListener('scroll', adjustTopbar, { passive: true });
